@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -f vendor/bin/phpstan ]; then
+  echo 'vendor/bin/phpstan does not exist in your project root directory.'
+  exit 1
+fi
+
+vendor/bin/phpstan --memory-limit=-1 "$@"

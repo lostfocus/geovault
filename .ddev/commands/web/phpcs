@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -f vendor/bin/php-cs-fixer ]; then
+  echo 'vendor/bin/php-cs-fixer does not exist in your project root directory.'
+  exit 1
+fi
+
+vendor/bin/php-cs-fixer fix "$@"

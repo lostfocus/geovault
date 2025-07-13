@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -f vendor/bin/rector ]; then
+  echo 'vendor/bin/rector does not exist in your project root directory.'
+  exit 1
+fi
+
+vendor/bin/rector "$@"
