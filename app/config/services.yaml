@@ -19,6 +19,17 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
+    RandomLib\Factory:
+        class: RandomLib\Factory
+
     App\Service\QuartzService:
         arguments:
             $path: '%env(resolve:QUARTZ_DIRECTORY)%'
+
+    App\Security\IndieAuth\IndieAuth:
+        arguments:
+            $host: '%env(HOST)%'
+
+    App\Security\IndieAuth\IndieAuthAuthenticator:
+        arguments:
+            $adminMe: '%env(ADMIN_ME)%'
