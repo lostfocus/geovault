@@ -104,10 +104,10 @@
         }
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.82.2",
-        "phpstan/phpstan": "^2.1.17",
+        "friendsofphp/php-cs-fixer": "^3.84.0",
+        "phpstan/phpstan": "^2.1.18",
         "phpunit/phpunit": "^12.2.7",
-        "rector/rector": "^2.1.1",
+        "rector/rector": "^2.1.2",
         "roave/security-advisories": "dev-latest",
         "symfony/browser-kit": "7.3.*",
         "symfony/css-selector": "7.3.*",
