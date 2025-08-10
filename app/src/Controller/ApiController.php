@@ -20,6 +20,13 @@ final class ApiController extends AbstractController
     #[Route('/api/query', name: 'api_query')]
     public function query(Request $request): JsonResponse
     {
+        $token = $request->get('token');
+        if (!is_string($token)) {
+            return $this->json(data: [
+                'error' => 'no token provided',
+            ], status: 400);
+        }
+
         $tz = $request->get('tz', 'UTC');
         if (!is_string($tz)) {
             $tz = 'UTC';
@@ -42,7 +49,7 @@ final class ApiController extends AbstractController
         }
 
         try {
-            $response = $this->locationService->query($date, $start, $end, $tz, $format);
+            $response = $this->locationService->query(token: $token, dateString: $date, startString: $start, endString: $end, tz: $tz, format: $format);
         } catch (\Throwable $e) {
             $this->logger->error($e->getMessage(), [
                 'exception' => $e,
@@ -60,6 +67,13 @@ final class ApiController extends AbstractController
     public function index(
         Request $request,
     ): JsonResponse {
+        $token = $request->get('token');
+        if (!is_string($token)) {
+            return $this->json(data: [
+                'error' => 'no token provided',
+            ], status: 400);
+        }
+
         $tz = $request->get('tz', 'UTC');
         if (!is_string($tz)) {
             $tz = 'UTC';
@@ -72,7 +86,7 @@ final class ApiController extends AbstractController
         $geocode = ('true' === $geocodeString);
 
         try {
-            $response = $this->locationService->getLast(before: $before, tz: $tz, geocode: $geocode);
+            $response = $this->locationService->getLast(token: $token, before: $before, tz: $tz, geocode: $geocode);
         } catch (\Throwable $e) {
             $this->logger->error($e->getMessage(), [
                 'exception' => $e,
@@ -89,6 +103,13 @@ final class ApiController extends AbstractController
     #[Route('/api/find-from-localtime', name: 'api_from_localtime')]
     public function fromLocalTime(Request $request): JsonResponse
     {
+        $token = $request->get('token');
+        if (!is_string($token)) {
+            return $this->json(data: [
+                'error' => 'no token provided',
+            ], status: 400);
+        }
+
         $input = $request->get('input');
         if (!is_string($input)) {
             return $this->json(data: [
@@ -96,7 +117,7 @@ final class ApiController extends AbstractController
             ], status: 400);
         }
         try {
-            $response = $this->locationService->getFromLocalTime($input);
+            $response = $this->locationService->getFromLocalTime($token, $input);
         } catch (\Throwable $e) {
             $this->logger->error($e->getMessage(), [
                 'exception' => $e,

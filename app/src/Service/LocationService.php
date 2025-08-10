@@ -6,12 +6,16 @@ namespace App\Service;
 
 use App\Dto\Responses\QuartzResponse;
 use App\Dto\Responses\QueryResponse;
+use App\Entity\Database;
+use App\Repository\DatabaseRepository;
+use App\Service\LocationService\DatabaseNoFoundException;
 use Quartz\Exception;
 
 readonly class LocationService
 {
     public function __construct(
         private QuartzService $quartz,
+        private DatabaseRepository $databaseRepository,
     ) {
     }
 
@@ -19,14 +23,20 @@ readonly class LocationService
      * @throws \DateMalformedStringException
      * @throws \DateInvalidTimeZoneException
      * @throws \DateInvalidOperationException
+     * @throws DatabaseNoFoundException
      *
      * @noinspection PhpUnusedParameterInspection
      */
-    public function getLast(?string $before = null, string $tz = 'UTC', bool $geocode = false): QuartzResponse
+    public function getLast(string $token, ?string $before = null, string $tz = 'UTC', bool $geocode = false): QuartzResponse
     {
+        $database = $this->databaseRepository->findOneBy(['readToken' => $token]);
+        if (!$database instanceof Database || null === $database->getSlug()) {
+            throw new DatabaseNoFoundException('invalid token');
+        }
+
         $dateTime = $this->tryToGuessDate($before, $tz);
 
-        return $this->quartz->getLast($dateTime);
+        return $this->quartz->getLast($database->getSlug(), $dateTime);
     }
 
     /**
@@ -56,28 +66,41 @@ readonly class LocationService
     }
 
     /**
-     * @throws \DateMalformedStringException
-     * @throws \DateInvalidTimeZoneException
+     * @throws DatabaseNoFoundException
      * @throws \DateInvalidOperationException
+     * @throws \DateInvalidTimeZoneException
+     * @throws \DateMalformedStringException
      */
-    public function getFromLocalTime(string $input): QuartzResponse
+    public function getFromLocalTime(string $token, string $input): QuartzResponse
     {
+        $database = $this->databaseRepository->findOneBy(['readToken' => $token]);
+        if (!$database instanceof Database || null === $database->getSlug()) {
+            throw new DatabaseNoFoundException('invalid token');
+        }
+
         if (preg_match('/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', $input)) {
             $date = $input;
         } else {
             throw new \UnexpectedValueException('Invalid date string');
         }
 
-        return $this->quartz->getFromLocalTime($date);
+        return $this->quartz->getFromLocalTime($database->getSlug(), $date);
     }
 
     /**
      * @throws \DateInvalidTimeZoneException
      * @throws \DateMalformedStringException
      * @throws Exception
+     * @throws DatabaseNoFoundException
      */
-    public function query(?string $dateString = null, ?string $startString = null, ?string $endString = null, string $tz = 'UTC', string $format = 'full'): QueryResponse
+    public function query(
+        string $token, ?string $dateString = null, ?string $startString = null, ?string $endString = null, string $tz = 'UTC', string $format = 'full'): QueryResponse
     {
+        $database = $this->databaseRepository->findOneBy(['readToken' => $token]);
+        if (!$database instanceof Database || null === $database->getSlug()) {
+            throw new DatabaseNoFoundException('invalid token');
+        }
+
         $timezone = new \DateTimeZone($tz);
         if (null !== $dateString) {
             $start = \DateTime::createFromFormat('Y-m-d H:i:s', $dateString.' 00:00:00', $timezone);
@@ -92,6 +115,6 @@ readonly class LocationService
             throw new \UnexpectedValueException('no date provided');
         }
 
-        return $this->quartz->query($start, $end, $format);
+        return $this->quartz->query($database->getSlug(), $start, $end, $format);
     }
 }

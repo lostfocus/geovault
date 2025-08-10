@@ -14,7 +14,7 @@ class QuartzServiceTest extends TestCase
     public function setUp(): void
     {
         $this->quartzService = new QuartzService(
-            dirname(__DIR__).'/assets/default'
+            dirname(__DIR__).'/assets'
         );
     }
 
@@ -27,7 +27,7 @@ class QuartzServiceTest extends TestCase
     {
         $date = new \DateTime('2024-11-04 10:00:00', new \DateTimeZone('UTC'));
         assert(null !== $this->quartzService);
-        $result = $this->quartzService->getLast($date);
+        $result = $this->quartzService->getLast('default', $date);
         // $this->assertNull($result);
         $this->assertInstanceOf(\stdClass::class, $result->data);
         $this->assertObjectHasProperty('type', $result->data);
