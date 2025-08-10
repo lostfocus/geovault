@@ -37,7 +37,7 @@ class IndieAuthController extends AbstractController
         $formDto = new FormDto();
 
         $form = $this->createFormBuilder($formDto)
-            ->add('url', UrlType::class, ['default_protocol' => 'https'])
+            ->add('url', UrlType::class, ['default_protocol' => 'https', 'label' => 'Url:'])
             ->add('save', SubmitType::class, ['label' => 'Login'])
             ->getForm();
 
