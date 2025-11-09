@@ -1,3 +1,15 @@
+# [1.0.0-develop.2](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.1...v1.0.0-develop.2) (2025-11-09)
+
+
+### Bug Fixes
+
+* Remove "Oh" ([48772e4](https://github.com/lostfocus/geovault/commit/48772e41329bdd7ba2043b36b1a6da6f3cac91bb))
+
+
+### Features
+
+* Write locations ([d184de6](https://github.com/lostfocus/geovault/commit/d184de617584a762103ad79027145c6226e07937))
+
 # 1.0.0-develop.1 (2025-11-09)
 
 
