@@ -21,6 +21,8 @@ with the help of tools like the dependabot.
 This project uses [DDEV](https://ddev.com/) - after checking it out, you'll have to copy
 the `.env.local` into the `app` directory and start the whole thing with `ddev start` 
 
+Enter your admin host in the `.env.local` - this would be the URL you use to log in via IndieAuth.
+
 `ddev composer install` and `ddev console doctrine:migrations:migrate` will install all the
 dependencies and get the database going.
 
