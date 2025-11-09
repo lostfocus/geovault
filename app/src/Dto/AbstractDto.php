@@ -56,7 +56,7 @@ abstract readonly class AbstractDto implements DtoInterface
         }
 
         if (is_array($value)) {
-            return array_map(fn ($item) => $this->mapValue($item), $value);
+            return array_map($this->mapValue(...), $value);
         }
 
         if ($value instanceof \stdClass) {

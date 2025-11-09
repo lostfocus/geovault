@@ -17,6 +17,46 @@ final class ApiController extends AbstractController
     ) {
     }
 
+    #[Route('/api/input', name: 'api_input', methods: ['POST'])]
+    public function input(Request $request): JsonResponse
+    {
+        $token = $request->query->get('token');
+        if (!is_string($token)) {
+            return $this->json(data: [
+                'error' => 'no token provided',
+            ], status: 400);
+        }
+
+        $input = $request->getContent();
+        try {
+            $inputContent = json_decode($input, true, 512, JSON_THROW_ON_ERROR);
+        } catch (\JsonException) {
+            return $this->json(data: [
+                'error' => 'invalid input',
+            ], status: 400);
+        }
+        assert(is_array($inputContent));
+        if (!array_key_exists('locations', $inputContent)) {
+            return $this->json(data: [
+                'error' => 'invalid input',
+            ], status: 400);
+        }
+
+        try {
+            $response = $this->locationService->input($token, $inputContent);
+        } catch (LocationService\DatabaseNotFoundException) {
+            return $this->json(data: [
+                'error' => 'database not found',
+            ], status: 400);
+        } catch (LocationService\InvalidInputException) {
+            return $this->json(data: [
+                'error' => 'invalid input',
+            ], status: 400);
+        }
+
+        return new JsonResponse($response);
+    }
+
     #[Route('/api/query', name: 'api_query')]
     public function query(Request $request): JsonResponse
     {

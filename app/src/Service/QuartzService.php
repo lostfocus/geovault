@@ -20,17 +20,28 @@ use Quartz\Shard;
 
 class QuartzService
 {
-    // private DB $readDb;
-    // private ?DB $writeDb = null;
-
     /** @var array<string, DB> */
     private array $readDbs = [];
+
+    /** @var array<string, DB> */
+    private array $writeDbs = [];
 
     public function __construct(
         private readonly string $path,
     ) {
         // $this->readDb = new DB(path: $path, mode: 'r');
         // $this->writeDb = new DB(path: $path, mode: 'w');
+    }
+
+    /**
+     * @param array<string, mixed> $location
+     *
+     * @throws Exception
+     */
+    public function write(string $slug, \DateTimeImmutable $datetime, array $location): void
+    {
+        $writeDb = $this->getWriteDb($slug);
+        $writeDb->add(\DateTime::createFromImmutable($datetime), $location);
     }
 
     /**
@@ -351,5 +362,15 @@ class QuartzService
         $this->readDbs[$slug] = new DB(path: implode('/', [$this->path, $slug]), mode: 'r');
 
         return $this->readDbs[$slug];
+    }
+
+    private function getWriteDb(string $slug): DB
+    {
+        if (isset($this->writeDbs[$slug])) {
+            return $this->writeDbs[$slug];
+        }
+        $this->writeDbs[$slug] = new DB(path: implode('/', [$this->path, $slug]), mode: 'w');
+
+        return $this->writeDbs[$slug];
     }
 }

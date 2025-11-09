@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DatabaseRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: DatabaseRepository::class)]
@@ -40,10 +42,17 @@ class Database
     #[ORM\Column(length: 255)]
     private string $timezone = 'UTC';
 
+    /**
+     * @var Collection<int, Location>
+     */
+    #[ORM\OneToMany(targetEntity: Location::class, mappedBy: 'locationDatabase', orphanRemoval: true)]
+    private Collection $locations;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
+        $this->locations = new ArrayCollection();
     }
 
     /** @noinspection PhpUnused */
@@ -138,6 +147,34 @@ class Database
     public function setTimezone(string $timezone): static
     {
         $this->timezone = $timezone;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Location>
+     */
+    public function getLocations(): Collection
+    {
+        return $this->locations;
+    }
+
+    public function addLocation(Location $location): static
+    {
+        if (!$this->locations->contains($location)) {
+            $this->locations->add($location);
+            $location->setLocationDatabase($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLocation(Location $location): static
+    {
+        // set the owning side to null (unless already changed)
+        if ($this->locations->removeElement($location) && $location->getLocationDatabase() === $this) {
+            $location->setLocationDatabase(null);
+        }
 
         return $this;
     }
