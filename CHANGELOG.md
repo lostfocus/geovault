@@ -1,3 +1,10 @@
+# [1.0.0-develop.4](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.3...v1.0.0-develop.4) (2025-11-12)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([239d3e9](https://github.com/lostfocus/geovault/commit/239d3e98d4be5f24c9ebdcdfd166c11fddef13dc))
+
 # [1.0.0-develop.3](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.2...v1.0.0-develop.3) (2025-11-11)
 
 
