@@ -1,3 +1,10 @@
+# [1.0.0-develop.6](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.5...v1.0.0-develop.6) (2025-11-13)
+
+
+### Bug Fixes
+
+* **deps:** bump symfony/http-foundation from 7.3.6 to 7.3.7 in /app ([5b9973d](https://github.com/lostfocus/geovault/commit/5b9973dedc3ab3b403b2f927de37dd39388643ab))
+
 # [1.0.0-develop.5](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.4...v1.0.0-develop.5) (2025-11-13)
 
 
