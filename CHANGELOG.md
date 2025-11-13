@@ -1,3 +1,10 @@
+# [1.0.0-develop.5](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.4...v1.0.0-develop.5) (2025-11-13)
+
+
+### Bug Fixes
+
+* **deps:** bump symfony/validator in /app in the symfony group ([8b8c4d4](https://github.com/lostfocus/geovault/commit/8b8c4d4063ba438464cb61e381935ec1c4fd5af1))
+
 # [1.0.0-develop.4](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.3...v1.0.0-develop.4) (2025-11-12)
 
 
