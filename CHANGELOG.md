@@ -1,3 +1,10 @@
+# [1.0.0-rc.2](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2025-11-15)
+
+
+### Bug Fixes
+
+* Move dom-crawler from dev to dependencies ([bdf76c9](https://github.com/lostfocus/geovault/commit/bdf76c95fe9dd40bed6093c76f250df5b29044f4))
+
 # [1.0.0-develop.7](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.6...v1.0.0-develop.7) (2025-11-15)
 
 
