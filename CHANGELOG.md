@@ -1,3 +1,10 @@
+# [1.0.0-develop.8](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.7...v1.0.0-develop.8) (2025-11-15)
+
+
+### Bug Fixes
+
+* Moved the css-selector to the "normal" dependencies ([4d7a447](https://github.com/lostfocus/geovault/commit/4d7a447c8cc649ca3641326cfde84d6682f8c500))
+
 # [1.0.0-rc.2](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2025-11-15)
 
 
