@@ -1,3 +1,11 @@
+# [1.0.0-develop.9](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.8...v1.0.0-develop.9) (2025-11-16)
+
+
+### Bug Fixes
+
+* Add result string to input response ([9d0fa51](https://github.com/lostfocus/geovault/commit/9d0fa51e1157a71c4efed0da5f2b35471256233a)), closes [#89](https://github.com/lostfocus/geovault/issues/89)
+* Dependency Updates ([ab69f53](https://github.com/lostfocus/geovault/commit/ab69f539cafd552c74bd0c579d665ecada8b927f))
+
 # [1.0.0-develop.8](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.7...v1.0.0-develop.8) (2025-11-15)
 
 
