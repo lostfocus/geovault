@@ -10,7 +10,8 @@ readonly class InputResponse extends AbstractDto
      * @param array<string, mixed>|null $lastLoc
      */
     public function __construct(
-        public int $num,
+        public string $result,
+        public ?int $num,
         public ?array $lastLoc,
     ) {
     }
