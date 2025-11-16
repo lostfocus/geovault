@@ -221,6 +221,6 @@ readonly class LocationService
 
         $this->entityManager->flush();
 
-        return new InputResponse($num, $lastLoc);
+        return new InputResponse('ok', $num, $lastLoc);
     }
 }
