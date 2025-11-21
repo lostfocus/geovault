@@ -86,4 +86,4 @@ jobs:
 
       - name: "Perform static analysis"
         working-directory: "app"
-        run: "vendor/bin/phpstan analyse src -c phpstan.neon --level=8"
+        run: "vendor/bin/phpstan analyse -c phpstan.dist.neon"
