@@ -1,3 +1,10 @@
+# [1.0.0-develop.11](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.10...v1.0.0-develop.11) (2025-11-21)
+
+
+### Features
+
+* Dependency Updates ([aff6077](https://github.com/lostfocus/geovault/commit/aff6077f250b0f75bac0896436b4c78db4d77ad9))
+
 # [1.0.0-develop.10](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.9...v1.0.0-develop.10) (2025-11-19)
 
 
