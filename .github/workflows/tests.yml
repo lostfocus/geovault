@@ -6,6 +6,7 @@ on:
     branches:
       - "main"
       - "develop"
+      - "feature/tests"
   pull_request:
     branches:
       - "main"
