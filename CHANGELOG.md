@@ -1,3 +1,10 @@
+# [1.0.0-develop.12](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.11...v1.0.0-develop.12) (2025-11-22)
+
+
+### Features
+
+* Load latest location from database if quartz doesn't have one ([63e5bc8](https://github.com/lostfocus/geovault/commit/63e5bc8f5f8455369da8fa50119f75b0cd36c943))
+
 # [1.0.0-develop.11](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.10...v1.0.0-develop.11) (2025-11-21)
 
 
