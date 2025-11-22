@@ -196,7 +196,7 @@ class QuartzService
      * @throws \DateMalformedStringException
      * @throws \DateInvalidTimeZoneException
      */
-    private function timezoneForLocation(float $lat, float $lng, string $date): TimezoneResult
+    public function timezoneForLocation(float $lat, float $lng, string $date): TimezoneResult
     {
         $tz = Timezone::timezone_for_location($lat, $lng);
         if (!is_string($tz)) {
