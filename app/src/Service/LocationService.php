@@ -6,6 +6,7 @@ namespace App\Service;
 
 use App\Dto\Responses\InputResponse;
 use App\Dto\Responses\QuartzResponse;
+use App\Dto\Responses\QuartzTimezone;
 use App\Dto\Responses\QueryResponse;
 use App\Entity\Database;
 use App\Entity\Location;
@@ -45,7 +46,42 @@ readonly class LocationService
 
         $dateTime = $this->tryToGuessDate($before, $tz);
 
-        return $this->quartz->getLast($database->getSlug(), $dateTime);
+        $response = $this->quartz->getLast($database->getSlug(), $dateTime);
+        if (null === $response->data) {
+            $latestLocation = $this->locationRepository->findLatestBefore($database, $dateTime);
+            if (null === $latestLocation) {
+                return $response;
+            }
+            try {
+                $data = json_decode(json_encode($latestLocation->getContent(), JSON_THROW_ON_ERROR), false, 512, JSON_THROW_ON_ERROR);
+                $quartzTimezone = null;
+                if (
+                    null !== $latestLocation->getLatitude()
+                    && null !== $latestLocation->getLongitude()
+                    && null !== $latestLocation->getTimestampUTC()
+                ) {
+                    $timezoneResult = $this->quartz->timezoneForLocation($latestLocation->getLatitude(), $latestLocation->getLongitude(), $latestLocation->getTimestampUTC()->format('c'));
+                    $quartzTimezone = new QuartzTimezone(
+                        offset: $timezoneResult->date->format('P'),
+                        seconds: (int) $timezoneResult->date->format('Z'),
+                        localtime: $timezoneResult->date->format('c'),
+                        name: $timezoneResult->name,
+                    );
+                }
+            } catch (\JsonException $e) {
+                $this->logger->error($e->getMessage(), ['exception' => $e]);
+
+                return $response;
+            }
+            assert($data instanceof \stdClass);
+
+            return new QuartzResponse(
+                data: $data,
+                timezone: $quartzTimezone,
+            );
+        }
+
+        return $response;
     }
 
     /**
