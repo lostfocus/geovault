@@ -1,3 +1,24 @@
+# [1.0.0-develop.12](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.11...v1.0.0-develop.12) (2025-11-22)
+
+
+### Features
+
+* Load latest location from database if quartz doesn't have one ([63e5bc8](https://github.com/lostfocus/geovault/commit/63e5bc8f5f8455369da8fa50119f75b0cd36c943))
+
+# [1.0.0-develop.11](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.10...v1.0.0-develop.11) (2025-11-21)
+
+
+### Features
+
+* Dependency Updates ([aff6077](https://github.com/lostfocus/geovault/commit/aff6077f250b0f75bac0896436b4c78db4d77ad9))
+
+# [1.0.0-develop.10](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.9...v1.0.0-develop.10) (2025-11-19)
+
+
+### Bug Fixes
+
+* **deps:** bump phpdocumentor/reflection-docblock in /app ([2cf6975](https://github.com/lostfocus/geovault/commit/2cf69750b10267a5c5b5a368d2468a1ee619f705))
+
 # [1.0.0-rc.3](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2025-11-16)
 
 
