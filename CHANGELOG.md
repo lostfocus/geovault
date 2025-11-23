@@ -1,3 +1,10 @@
+# [1.0.0-develop.13](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.12...v1.0.0-develop.13) (2025-11-23)
+
+
+### Features
+
+* Logout-Link ([5ea5ab8](https://github.com/lostfocus/geovault/commit/5ea5ab80ae4468a8adcd54bc922228c9faf0be9e))
+
 # [1.0.0-rc.4](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2025-11-23)
 
 
