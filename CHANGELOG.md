@@ -1,3 +1,10 @@
+# [1.0.0-develop.14](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.13...v1.0.0-develop.14) (2025-11-28)
+
+
+### Bug Fixes
+
+* **deps:** bump phpdocumentor/reflection-docblock in /app ([dcdb9fe](https://github.com/lostfocus/geovault/commit/dcdb9fe4db88a03b5c69c154c3ecf816b89c4a91))
+
 # [1.0.0-develop.13](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.12...v1.0.0-develop.13) (2025-11-23)
 
 
