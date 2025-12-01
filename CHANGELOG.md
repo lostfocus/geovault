@@ -1,3 +1,11 @@
+# [1.0.0-develop.15](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.14...v1.0.0-develop.15) (2025-12-01)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([5443131](https://github.com/lostfocus/geovault/commit/544313153dfeaca7dd16a7aeb6d3240b33a465fc))
+* **deps:** bump twig/twig in /app in the twig group ([401f058](https://github.com/lostfocus/geovault/commit/401f0589be96484e1f7f57600d41f6b746bf4c5d))
+
 # [1.0.0-develop.14](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.13...v1.0.0-develop.14) (2025-11-28)
 
 
