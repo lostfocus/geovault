@@ -1,3 +1,18 @@
+# [1.0.0-rc.5](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2025-12-16)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([5443131](https://github.com/lostfocus/geovault/commit/544313153dfeaca7dd16a7aeb6d3240b33a465fc))
+* **deps:** bump phpdocumentor/reflection-docblock in /app ([dcdb9fe](https://github.com/lostfocus/geovault/commit/dcdb9fe4db88a03b5c69c154c3ecf816b89c4a91))
+* **deps:** bump twig/twig in /app in the twig group ([401f058](https://github.com/lostfocus/geovault/commit/401f0589be96484e1f7f57600d41f6b746bf4c5d))
+* **deps:** manual Dependency Updates ([32cca52](https://github.com/lostfocus/geovault/commit/32cca52c24167d76b0986b5c41e146f2d3903f01))
+
+
+### Features
+
+* Logout-Link ([5ea5ab8](https://github.com/lostfocus/geovault/commit/5ea5ab80ae4468a8adcd54bc922228c9faf0be9e))
+
 # [1.0.0-develop.16](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.15...v1.0.0-develop.16) (2025-12-16)
 
 
