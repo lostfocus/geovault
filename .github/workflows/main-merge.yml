@@ -18,12 +18,12 @@ jobs:
         with:
           fetch-depth: 0 # Full clone necessary for proper merge
 
-      - name: Nightly Merge Main in Develop
+      - name: Nightly Merge Main in RC
         uses: robotology/gh-action-nightly-merge@v1.5.2
         with:
           stable_branch: 'main'
-          development_branch: 'develop'
-          allow_ff: false
+          development_branch: 'rc'
+          allow_ff: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -32,15 +32,7 @@ jobs:
         with:
           stable_branch: 'rc'
           development_branch: 'develop'
-          allow_ff: false
+          allow_ff: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Nightly Merge Main in RC
-        uses: robotology/gh-action-nightly-merge@v1.5.2
-        with:
-          stable_branch: 'main'
-          development_branch: 'rc'
-          allow_ff: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
