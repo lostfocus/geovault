@@ -1,3 +1,10 @@
+# [1.0.0-develop.19](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.18...v1.0.0-develop.19) (2026-01-06)
+
+
+### Bug Fixes
+
+* **deps:** bump paragonie/sodium_compat from 2.4.0 to 2.5.0 in /app ([dee2391](https://github.com/lostfocus/geovault/commit/dee2391f7fb8ebeddf6a9d69b03cb9226ce70de3))
+
 # [1.0.0-develop.18](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.17...v1.0.0-develop.18) (2025-12-25)
 
 
