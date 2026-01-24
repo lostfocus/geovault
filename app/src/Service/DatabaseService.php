@@ -71,4 +71,9 @@ readonly class DatabaseService
 
         return bin2hex(random_bytes($length));
     }
+
+    public function getDatabaseById(int $id, User $user): ?Database
+    {
+        return $this->databaseRepository->findOneBy(['id' => $id, 'user' => $user]);
+    }
 }

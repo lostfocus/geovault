@@ -1,3 +1,50 @@
+# [1.0.0-develop.22](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.21...v1.0.0-develop.22) (2026-01-24)
+
+
+### Bug Fixes
+
+* **deps:** Depenendy Updates ([174359e](https://github.com/lostfocus/geovault/commit/174359e1e201d53be6cb10495a0e4c483c91e41e))
+
+
+### Features
+
+* Basic Map view ([7676e79](https://github.com/lostfocus/geovault/commit/7676e791179fe306015b95da5ecd859afd9b2673))
+
+# [1.0.0-develop.21](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.20...v1.0.0-develop.21) (2026-01-13)
+
+
+### Bug Fixes
+
+* **deps:** bump phpstan/phpdoc-parser from 2.3.0 to 2.3.1 in /app ([fae7465](https://github.com/lostfocus/geovault/commit/fae7465d6adf5ff3bbf815ff70a139df799401e1))
+
+# [1.0.0-develop.20](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.19...v1.0.0-develop.20) (2026-01-12)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([1c29abf](https://github.com/lostfocus/geovault/commit/1c29abf21f66de28cad78dd993ca235ea2dc0f03))
+
+# [1.0.0-develop.19](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.18...v1.0.0-develop.19) (2026-01-06)
+
+
+### Bug Fixes
+
+* **deps:** bump paragonie/sodium_compat from 2.4.0 to 2.5.0 in /app ([dee2391](https://github.com/lostfocus/geovault/commit/dee2391f7fb8ebeddf6a9d69b03cb9226ce70de3))
+
+# [1.0.0-develop.18](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.17...v1.0.0-develop.18) (2025-12-25)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([854de9b](https://github.com/lostfocus/geovault/commit/854de9b7154579e7e1cb52d3f1b1d224fe032ed6))
+
+# [1.0.0-develop.17](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.16...v1.0.0-develop.17) (2025-12-25)
+
+
+### Bug Fixes
+
+* **deps:** bump phpdocumentor/reflection-docblock in /app ([fd96923](https://github.com/lostfocus/geovault/commit/fd9692391635a8cbfef9568fbbbf9e9f8c936e6e))
+
 # [1.0.0-rc.5](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2025-12-16)
 
 

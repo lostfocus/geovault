@@ -16,4 +16,18 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
+    'map' => [
+        'path' => './assets/map.js',
+        'entrypoint' => true,
+    ],
+    'leaflet' => [
+        'version' => '1.9.4',
+    ],
+    'leaflet/dist/leaflet.min.css' => [
+        'version' => '1.9.4',
+        'type' => 'css',
+    ],
+    'es-module-shims' => [
+        'version' => '2.6.2',
+    ],
 ];

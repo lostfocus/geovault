@@ -38,3 +38,10 @@ div.indieauth form input {
 div.indieauth form button {
     grid-area: input;
 }
+
+div.map {
+    margin-top: 1em;
+    width: 100%;
+    height: 500px;
+    background-color: #3b82f6;
+}
