@@ -1,3 +1,24 @@
+# [1.0.0-develop.21](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.20...v1.0.0-develop.21) (2026-01-13)
+
+
+### Bug Fixes
+
+* **deps:** bump phpstan/phpdoc-parser from 2.3.0 to 2.3.1 in /app ([fae7465](https://github.com/lostfocus/geovault/commit/fae7465d6adf5ff3bbf815ff70a139df799401e1))
+
+# [1.0.0-develop.20](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.19...v1.0.0-develop.20) (2026-01-12)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([1c29abf](https://github.com/lostfocus/geovault/commit/1c29abf21f66de28cad78dd993ca235ea2dc0f03))
+
+# [1.0.0-develop.19](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.18...v1.0.0-develop.19) (2026-01-06)
+
+
+### Bug Fixes
+
+* **deps:** bump paragonie/sodium_compat from 2.4.0 to 2.5.0 in /app ([dee2391](https://github.com/lostfocus/geovault/commit/dee2391f7fb8ebeddf6a9d69b03cb9226ce70de3))
+
 # [1.0.0-develop.18](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.17...v1.0.0-develop.18) (2025-12-25)
 
 
