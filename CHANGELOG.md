@@ -1,3 +1,15 @@
+# [1.0.0-develop.22](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.21...v1.0.0-develop.22) (2026-01-24)
+
+
+### Bug Fixes
+
+* **deps:** Depenendy Updates ([174359e](https://github.com/lostfocus/geovault/commit/174359e1e201d53be6cb10495a0e4c483c91e41e))
+
+
+### Features
+
+* Basic Map view ([7676e79](https://github.com/lostfocus/geovault/commit/7676e791179fe306015b95da5ecd859afd9b2673))
+
 # [1.0.0-develop.21](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.20...v1.0.0-develop.21) (2026-01-13)
 
 
