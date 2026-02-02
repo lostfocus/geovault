@@ -1,3 +1,12 @@
+# [1.0.0-rc.7](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.6...v1.0.0-rc.7) (2026-02-02)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([074c013](https://github.com/lostfocus/geovault/commit/074c0137aa031b9bb871f24fdea7588b5ec31e5e))
+* **deps:** bump phpstan/phpdoc-parser from 2.3.1 to 2.3.2 in /app ([0ebee31](https://github.com/lostfocus/geovault/commit/0ebee319ed0cd79ffa371018eb622390f37bde54))
+* Update Dependencies ([a7d1471](https://github.com/lostfocus/geovault/commit/a7d1471580e091084cfcae408782e683abf24220))
+
 # [1.0.0-develop.25](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.24...v1.0.0-develop.25) (2026-02-02)
 
 
