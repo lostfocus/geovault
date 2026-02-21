@@ -1,3 +1,22 @@
+# [1.0.0-develop.27](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.26...v1.0.0-develop.27) (2026-02-21)
+
+
+### Bug Fixes
+
+* Ran PHPStan ([ac75b32](https://github.com/lostfocus/geovault/commit/ac75b3252e15be96ff8e399a6df542a25dd6aaf6))
+* Update Framework Bundle recipe ([0e7a278](https://github.com/lostfocus/geovault/commit/0e7a278999fea69911b9a0127a741802ce8ff780))
+* Update Messenger recipe ([1709944](https://github.com/lostfocus/geovault/commit/170994461977cdbfd1e6bdc0514ca29b53ca2458))
+* Update Monolog recipe ([7c0ab2f](https://github.com/lostfocus/geovault/commit/7c0ab2ff25b032463d5886be3507ff5f9d798557))
+* Update PHPUnit recipe ([07958e3](https://github.com/lostfocus/geovault/commit/07958e3c5c2d11a7151c7855a91edf5fb55b13d4))
+* Update Routing recipe ([d44e11b](https://github.com/lostfocus/geovault/commit/d44e11b632884a02e808da5596243bdc60f957dd))
+* Update Security recipe ([7055674](https://github.com/lostfocus/geovault/commit/7055674cfc2eb6aa5ed71d2c4f5c68e22dd7ec85))
+* Update Webapp Pack recipe ([5859861](https://github.com/lostfocus/geovault/commit/5859861075ac4042d16f40496026aa8aacc7f8f3))
+
+
+### Features
+
+* Symfony 7.4 ([6d0c8aa](https://github.com/lostfocus/geovault/commit/6d0c8aa11b790502b6aafdcbe218456540083eea))
+
 # [1.0.0-rc.8](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.7...v1.0.0-rc.8) (2026-02-21)
 
 
