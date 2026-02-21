@@ -1,3 +1,10 @@
+# [1.0.0-develop.28](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.27...v1.0.0-develop.28) (2026-02-21)
+
+
+### Bug Fixes
+
+* Clean up the frontend a bit ([8b70245](https://github.com/lostfocus/geovault/commit/8b70245e9e3fedb0b370d2ebaecebe4ab3170e42))
+
 # [1.0.0-develop.27](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.26...v1.0.0-develop.27) (2026-02-21)
 
 
