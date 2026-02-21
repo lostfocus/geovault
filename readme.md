@@ -1,9 +1,7 @@
 # GeoVault
 
 > [!CAUTION]
-> This is in a very early state and should not be used by anyone yet. 
-> Mostly because it would expose all your location data without any
-> protection.
+> This is in a very early state and you should only use if you know what you're doing
  
 ## Pre-Amble
 
@@ -31,9 +29,3 @@ You can run
 [PHP Coding Standards Fixer](https://cs.symfony.com/), 
 [PHPStan](https://phpstan.org/) and [PHPUnit](https://phpunit.de/index.html) 
 with `ddev rector`, `ddev phpcs`, `ddev phpstan` and `ddev phpunit` respectively.
-
-## Deployment
-
-:rotating_light: DO NOT DO THIS YET :rotating_light: 
-
-Seriously. Don't even think about it.
