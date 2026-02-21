@@ -45,3 +45,11 @@ div.map {
     height: 500px;
     background-color: #3b82f6;
 }
+
+nav {
+    margin-top: 1em;
+}
+
+table.databases {
+    width: 100%;
+}

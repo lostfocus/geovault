@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <table>
+    <table class="databases">
         <thead>
         <tr>
             <th>Slug</th>
@@ -20,6 +20,7 @@
         </tbody>
     </table>
     <hr>
+    <p>Create new database:</p>
     {{ form_start(form) }}
     {{ form_end(form) }}
     <hr>
