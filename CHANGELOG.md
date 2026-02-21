@@ -1,3 +1,10 @@
+# [1.0.0-rc.8](https://github.com/lostfocus/geovault/compare/v1.0.0-rc.7...v1.0.0-rc.8) (2026-02-21)
+
+
+### Features
+
+* Update dependencies, activaty native lazy objects ([b9bdfab](https://github.com/lostfocus/geovault/commit/b9bdfab93ddedcfc362d64b14f9e60f220a43ea3))
+
 # [1.0.0-develop.26](https://github.com/lostfocus/geovault/compare/v1.0.0-develop.25...v1.0.0-develop.26) (2026-02-21)
 
 
