@@ -67,6 +67,7 @@ final class ApiController extends AbstractController
             ], status: 400);
         }
 
+        /** @var bool|float|int|string|null $tz */
         $tz = $request->query->get('tz', 'UTC');
         if (!is_string($tz)) {
             $tz = 'UTC';
@@ -113,7 +114,7 @@ final class ApiController extends AbstractController
                 'error' => 'no token provided',
             ], status: 400);
         }
-
+        /** @var bool|float|int|string|null $tz */
         $tz = $request->query->get('tz', 'UTC');
         if (!is_string($tz)) {
             $tz = 'UTC';
