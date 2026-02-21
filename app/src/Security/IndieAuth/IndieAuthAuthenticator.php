@@ -31,8 +31,8 @@ class IndieAuthAuthenticator extends AbstractAuthenticator
 
     public function supports(Request $request): bool
     {
-        $code = $request->get('code');
-        $state = $request->get('state');
+        $code = $request->query->get('code');
+        $state = $request->query->get('state');
         $this->logger->debug('get', ['code' => $code, 'state' => $state]);
         if (null === $code) {
             return false;
@@ -56,8 +56,8 @@ class IndieAuthAuthenticator extends AbstractAuthenticator
      */
     public function authenticate(Request $request): Passport
     {
-        $code = $request->get('code');
-        $state = $request->get('state');
+        $code = $request->query->get('code');
+        $state = $request->query->get('state');
         if (!is_string($code)) {
             throw new AuthenticationException('Wrong Authorization Code');
         }

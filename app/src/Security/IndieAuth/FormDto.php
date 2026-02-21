@@ -17,7 +17,7 @@ class FormDto
         return $this->url;
     }
 
-    public function setUrl(?string $url): FormDto
+    public function setUrl(?string $url): self
     {
         $this->url = $url;
 

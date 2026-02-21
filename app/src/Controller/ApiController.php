@@ -60,30 +60,30 @@ final class ApiController extends AbstractController
     #[Route('/api/query', name: 'api_query')]
     public function query(Request $request): JsonResponse
     {
-        $token = $request->get('token');
+        $token = $request->query->get('token');
         if (!is_string($token)) {
             return $this->json(data: [
                 'error' => 'no token provided',
             ], status: 400);
         }
 
-        $tz = $request->get('tz', 'UTC');
+        $tz = $request->query->get('tz', 'UTC');
         if (!is_string($tz)) {
             $tz = 'UTC';
         }
-        $format = $request->get('format', 'full');
+        $format = $request->query->get('format', 'full');
         if ('linestring' !== $format) {
             $format = 'full';
         }
-        $date = $request->get('date');
+        $date = $request->query->get('date');
         if (!is_string($date)) {
             $date = null;
         }
-        $start = $request->get('start');
+        $start = $request->query->get('start');
         if (!is_string($start)) {
             $start = null;
         }
-        $end = $request->get('end');
+        $end = $request->query->get('end');
         if (!is_string($end)) {
             $end = null;
         }
@@ -107,22 +107,22 @@ final class ApiController extends AbstractController
     public function index(
         Request $request,
     ): JsonResponse {
-        $token = $request->get('token');
+        $token = $request->query->get('token');
         if (!is_string($token)) {
             return $this->json(data: [
                 'error' => 'no token provided',
             ], status: 400);
         }
 
-        $tz = $request->get('tz', 'UTC');
+        $tz = $request->query->get('tz', 'UTC');
         if (!is_string($tz)) {
             $tz = 'UTC';
         }
-        $before = $request->get('before');
+        $before = $request->query->get('before');
         if (!is_string($before)) {
             $before = null;
         }
-        $geocodeString = $request->get('geocode');
+        $geocodeString = $request->query->get('geocode');
         $geocode = ('true' === $geocodeString);
 
         try {
@@ -143,14 +143,14 @@ final class ApiController extends AbstractController
     #[Route('/api/find-from-localtime', name: 'api_from_localtime')]
     public function fromLocalTime(Request $request): JsonResponse
     {
-        $token = $request->get('token');
+        $token = $request->query->get('token');
         if (!is_string($token)) {
             return $this->json(data: [
                 'error' => 'no token provided',
             ], status: 400);
         }
 
-        $input = $request->get('input');
+        $input = $request->query->get('input');
         if (!is_string($input)) {
             return $this->json(data: [
                 'error' => 'Invalid date provided',
