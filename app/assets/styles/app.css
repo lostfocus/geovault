@@ -1,3 +1,55 @@
-body {
-    background-color: skyblue;
+div.container {
+    padding: 0;
+    margin: 1em auto;
+    width: 98%;
+    max-width: 800px;
+}
+
+header {
+    border-bottom: 1px solid #5B21B6;
+    margin-bottom: 1em;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+header h1 a {
+    text-decoration: none;
+}
+
+div.indieauth form {
+    width: 100%;
+}
+div.indieauth form div#form div {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    grid-template-areas: "label input";
+    grid-gap: 10px;
+    margin: 1em 0;
+}
+div.indieauth form label {
+    grid-area: label;
+    text-align: right;
+}
+div.indieauth form input {
+    grid-area: input;
+}
+div.indieauth form button {
+    grid-area: input;
+}
+
+div.map {
+    margin-top: 1em;
+    width: 100%;
+    height: 500px;
+    background-color: #3b82f6;
+}
+
+nav {
+    margin-top: 1em;
+}
+
+table.databases {
+    width: 100%;
 }

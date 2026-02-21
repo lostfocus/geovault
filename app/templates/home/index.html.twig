@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="databases">
+        <thead>
+        <tr>
+            <th>Slug</th>
+            <th>Read</th>
+            <th>Write</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for database in databases %}
+            <tr>
+                <td><a href="{{ path('map', {mapid: database.id}) }}">{{ database.slug }}</a></td>
+                <td>{{ database.readToken }}</td>
+                <td>{{ database.writeToken }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <p>Create new database:</p>
+    {{ form_start(form) }}
+    {{ form_end(form) }}
+    <hr>
+    <nav>
+        <a href="{{ path('logout') }}">Logout</a>
+    </nav>
+{% endblock %}

@@ -1,0 +1,66 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - rc
+
+permissions:
+  contents: read # for checkout
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+      - name: Install semantic-release
+        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/exec
+
+      - name: Run semantic-release
+        run: semantic-release
+
+  main-merge:
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Full clone necessary for proper merge
+
+      - name: Merge Main in RC
+        uses: robotology/gh-action-nightly-merge@v1.5.2
+        with:
+          stable_branch: 'main'
+          development_branch: 'rc'
+          allow_ff: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge RC in Develop
+        uses: robotology/gh-action-nightly-merge@v1.5.2
+        with:
+          stable_branch: 'rc'
+          development_branch: 'develop'
+          allow_ff: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

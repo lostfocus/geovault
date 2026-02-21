@@ -18,24 +18,39 @@ use Quartz\Record;
 use Quartz\ResultSet;
 use Quartz\Shard;
 
-readonly class QuartzService
+class QuartzService
 {
-    private DB $readDb;
-    // private ?DB $writeDb = null;
+    /** @var array<string, DB> */
+    private array $readDbs = [];
+
+    /** @var array<string, DB> */
+    private array $writeDbs = [];
 
     public function __construct(
-        string $path,
+        private readonly string $path,
     ) {
-        $this->readDb = new DB(path: $path, mode: 'r');
+        // $this->readDb = new DB(path: $path, mode: 'r');
         // $this->writeDb = new DB(path: $path, mode: 'w');
+    }
+
+    /**
+     * @param array<string, mixed> $location
+     *
+     * @throws Exception
+     */
+    public function write(string $slug, \DateTimeImmutable $datetime, array $location): void
+    {
+        $writeDb = $this->getWriteDb($slug);
+        $writeDb->add(\DateTime::createFromImmutable($datetime), $location);
     }
 
     /**
      * @throws Exception
      */
-    public function query(\DateTime $start, \DateTime $end, string $format = 'full'): QueryResponse
+    public function query(string $slug, \DateTime $start, \DateTime $end, string $format = 'full'): QueryResponse
     {
-        $result = $this->readDb->queryRange($start, $end);
+        $readDb = $this->getReadDb($slug);
+        $result = $readDb->queryRange($start, $end);
 
         if ('linestring' === $format) {
             return $this->returnLinestring($result, $start);
@@ -111,9 +126,9 @@ readonly class QuartzService
      * @throws \DateInvalidTimeZoneException
      * @throws \DateMalformedStringException
      */
-    public function getLast(\DateTime $dateTime): QuartzResponse
+    public function getLast(string $slug, \DateTime $dateTime): QuartzResponse
     {
-        $record = $this->findClosestRecord($dateTime);
+        $record = $this->findClosestRecord($slug, $dateTime);
         if (null === $record) {
             return new QuartzResponse(null);
         }
@@ -146,12 +161,13 @@ readonly class QuartzService
     /**
      * @throws \DateInvalidOperationException
      */
-    private function findClosestRecord(\DateTime $dateTime): ?Record
+    private function findClosestRecord(string $slug, \DateTime $dateTime): ?Record
     {
-        $shard = $this->readDb->shardForDate($dateTime);
+        $readDb = $this->getReadDb($slug);
+        $shard = $readDb->shardForDate($dateTime);
         if (!$shard instanceof Shard || !$shard->exists()) {
             $date = $dateTime->sub(new \DateInterval('PT86400S'));
-            $shard = $this->readDb->shardForDate($date);
+            $shard = $readDb->shardForDate($date);
             if (!$shard instanceof Shard || !$shard->exists()) {
                 return null;
             }
@@ -180,7 +196,7 @@ readonly class QuartzService
      * @throws \DateMalformedStringException
      * @throws \DateInvalidTimeZoneException
      */
-    private function timezoneForLocation(float $lat, float $lng, string $date): TimezoneResult
+    public function timezoneForLocation(float $lat, float $lng, string $date): TimezoneResult
     {
         $tz = Timezone::timezone_for_location($lat, $lng);
         if (!is_string($tz)) {
@@ -195,7 +211,7 @@ readonly class QuartzService
      * @throws \DateInvalidOperationException
      * @throws \DateMalformedStringException
      */
-    public function getFromLocalTime(string $input): QuartzResponse
+    public function getFromLocalTime(string $slug, string $input): QuartzResponse
     {
         $timezones = $this->getTimezones();
 
@@ -207,7 +223,7 @@ readonly class QuartzService
             if (false === $date) {
                 throw new \DateMalformedStringException();
             }
-            $record = $this->findClosestRecord($date);
+            $record = $this->findClosestRecord($slug, $date);
             if ($record instanceof Record) {
                 $recordData = $this->getRecordData($record);
                 $recordDate = $this->getRecordDate($record);
@@ -336,5 +352,25 @@ readonly class QuartzService
             return $recordDate;
         }
         throw new \UnexpectedValueException('Record has no date property');
+    }
+
+    private function getReadDb(string $slug): DB
+    {
+        if (isset($this->readDbs[$slug])) {
+            return $this->readDbs[$slug];
+        }
+        $this->readDbs[$slug] = new DB(path: implode('/', [$this->path, $slug]), mode: 'r');
+
+        return $this->readDbs[$slug];
+    }
+
+    private function getWriteDb(string $slug): DB
+    {
+        if (isset($this->writeDbs[$slug])) {
+            return $this->writeDbs[$slug];
+        }
+        $this->writeDbs[$slug] = new DB(path: implode('/', [$this->path, $slug]), mode: 'w');
+
+        return $this->writeDbs[$slug];
     }
 }

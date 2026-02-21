@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block importmap %}
+    {{ importmap('map') }}
+{% endblock %}
+
+{% block body %}
+    <div>
+        <label>
+            Date:
+            <input type="date" name="date" id="date" value="{{ date|date('Y-m-d') }}">
+        </label>
+    </div>
+    <div class="map" data-readtoken="{{ database.readToken }}">
+
+    </div>
+    <nav>
+        <a href="{{ path('app_home') }}">&laquo; Back</a>
+    </nav>
+{% endblock %}
