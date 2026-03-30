@@ -1,3 +1,11 @@
+## [1.0.1-develop.1](https://github.com/lostfocus/geovault/compare/v1.0.0...v1.0.1-develop.1) (2026-03-30)
+
+
+### Bug Fixes
+
+* Dependency Updates ([3bd5ba8](https://github.com/lostfocus/geovault/commit/3bd5ba8c7e1ae3fbdc075f08cee859c18fa20ca4))
+* Of course the array key has to exist ([0cafd6a](https://github.com/lostfocus/geovault/commit/0cafd6a336767c2266dde35254d810a71d883c62))
+
 # 1.0.0 (2026-02-21)
 
 
