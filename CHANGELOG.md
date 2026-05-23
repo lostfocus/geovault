@@ -1,3 +1,43 @@
+## [1.0.1-rc.1](https://github.com/lostfocus/geovault/compare/v1.0.0...v1.0.1-rc.1) (2026-05-23)
+
+
+### Bug Fixes
+
+* Dependency Updates ([faa6e4f](https://github.com/lostfocus/geovault/commit/faa6e4fc164dbdf148c18a7a940fcc37a50ec2ce))
+* Dependency Updates ([3bd5ba8](https://github.com/lostfocus/geovault/commit/3bd5ba8c7e1ae3fbdc075f08cee859c18fa20ca4))
+* **deps:** bump doctrine/orm in /app in the doctrine group ([01ff835](https://github.com/lostfocus/geovault/commit/01ff835fe9a2450b5dfc32b0e23371d9d7a4904c))
+* **deps:** bump twig/twig from 3.24.0 to 3.26.0 in /app ([5f89027](https://github.com/lostfocus/geovault/commit/5f89027124d2c020478e0e316f88c4173bd04c6d))
+* Of course the array key has to exist ([0cafd6a](https://github.com/lostfocus/geovault/commit/0cafd6a336767c2266dde35254d810a71d883c62))
+
+## [1.0.1-develop.4](https://github.com/lostfocus/geovault/compare/v1.0.1-develop.3...v1.0.1-develop.4) (2026-05-23)
+
+
+### Bug Fixes
+
+* Dependency Updates ([faa6e4f](https://github.com/lostfocus/geovault/commit/faa6e4fc164dbdf148c18a7a940fcc37a50ec2ce))
+
+## [1.0.1-develop.3](https://github.com/lostfocus/geovault/compare/v1.0.1-develop.2...v1.0.1-develop.3) (2026-05-23)
+
+
+### Bug Fixes
+
+* **deps:** bump twig/twig from 3.24.0 to 3.26.0 in /app ([5f89027](https://github.com/lostfocus/geovault/commit/5f89027124d2c020478e0e316f88c4173bd04c6d))
+
+## [1.0.1-develop.2](https://github.com/lostfocus/geovault/compare/v1.0.1-develop.1...v1.0.1-develop.2) (2026-04-11)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([01ff835](https://github.com/lostfocus/geovault/commit/01ff835fe9a2450b5dfc32b0e23371d9d7a4904c))
+
+## [1.0.1-develop.1](https://github.com/lostfocus/geovault/compare/v1.0.0...v1.0.1-develop.1) (2026-03-30)
+
+
+### Bug Fixes
+
+* Dependency Updates ([3bd5ba8](https://github.com/lostfocus/geovault/commit/3bd5ba8c7e1ae3fbdc075f08cee859c18fa20ca4))
+* Of course the array key has to exist ([0cafd6a](https://github.com/lostfocus/geovault/commit/0cafd6a336767c2266dde35254d810a71d883c62))
+
 # 1.0.0 (2026-02-21)
 
 
