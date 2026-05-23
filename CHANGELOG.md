@@ -1,3 +1,10 @@
+## [1.0.1-develop.3](https://github.com/lostfocus/geovault/compare/v1.0.1-develop.2...v1.0.1-develop.3) (2026-05-23)
+
+
+### Bug Fixes
+
+* **deps:** bump twig/twig from 3.24.0 to 3.26.0 in /app ([5f89027](https://github.com/lostfocus/geovault/commit/5f89027124d2c020478e0e316f88c4173bd04c6d))
+
 ## [1.0.1-develop.2](https://github.com/lostfocus/geovault/compare/v1.0.1-develop.1...v1.0.1-develop.2) (2026-04-11)
 
 
