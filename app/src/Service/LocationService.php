@@ -225,7 +225,7 @@ readonly class LocationService
                 if (
                     array_key_exists('geometry', $loc)
                     && is_array($loc['geometry'])
-                    && !array_key_exists('coordinates', $loc['geometry'])
+                    && array_key_exists('coordinates', $loc['geometry'])
                     && is_array($loc['geometry']['coordinates'])
                     && count($loc['geometry']['coordinates']) > 1
                     && 0 === $loc['geometry']['coordinates'][0]
