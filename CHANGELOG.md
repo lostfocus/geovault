@@ -1,3 +1,10 @@
+## [1.0.2-develop.2](https://github.com/lostfocus/geovault/compare/v1.0.2-develop.1...v1.0.2-develop.2) (2026-05-28)
+
+
+### Bug Fixes
+
+* **deps:** bump twig/twig in /app in the twig group ([86205fe](https://github.com/lostfocus/geovault/commit/86205fe05bdeb2d9b1dbba4af297815554bd119a))
+
 ## [1.0.2-develop.1](https://github.com/lostfocus/geovault/compare/v1.0.1...v1.0.2-develop.1) (2026-05-26)
 
 
