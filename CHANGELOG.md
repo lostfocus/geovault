@@ -1,3 +1,10 @@
+## [1.0.2-develop.3](https://github.com/lostfocus/geovault/compare/v1.0.2-develop.2...v1.0.2-develop.3) (2026-05-29)
+
+
+### Bug Fixes
+
+* **deps:** bump symfony/polyfill-intl-idn from 1.37.0 to 1.38.1 in /app ([812fde3](https://github.com/lostfocus/geovault/commit/812fde33a65b91764b44c92c974defdd936d7e7a))
+
 ## [1.0.2-develop.2](https://github.com/lostfocus/geovault/compare/v1.0.2-develop.1...v1.0.2-develop.2) (2026-05-28)
 
 
