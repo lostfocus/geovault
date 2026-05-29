@@ -1,3 +1,24 @@
+## [1.0.2-develop.3](https://github.com/lostfocus/geovault/compare/v1.0.2-develop.2...v1.0.2-develop.3) (2026-05-29)
+
+
+### Bug Fixes
+
+* **deps:** bump symfony/polyfill-intl-idn from 1.37.0 to 1.38.1 in /app ([812fde3](https://github.com/lostfocus/geovault/commit/812fde33a65b91764b44c92c974defdd936d7e7a))
+
+## [1.0.2-develop.2](https://github.com/lostfocus/geovault/compare/v1.0.2-develop.1...v1.0.2-develop.2) (2026-05-28)
+
+
+### Bug Fixes
+
+* **deps:** bump twig/twig in /app in the twig group ([86205fe](https://github.com/lostfocus/geovault/commit/86205fe05bdeb2d9b1dbba4af297815554bd119a))
+
+## [1.0.2-develop.1](https://github.com/lostfocus/geovault/compare/v1.0.1...v1.0.2-develop.1) (2026-05-26)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm in /app in the doctrine group ([e20fae4](https://github.com/lostfocus/geovault/commit/e20fae4da58d4162de49d43b791560e48fff01ea))
+
 ## [1.0.1](https://github.com/lostfocus/geovault/compare/v1.0.0...v1.0.1) (2026-05-23)
 
 
