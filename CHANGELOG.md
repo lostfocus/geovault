@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/lostfocus/geovault/compare/v1.0.2...v1.0.3) (2026-06-04)
+
+
+### Bug Fixes
+
+* **deps:** bump symfony/flex ([703cd60](https://github.com/lostfocus/geovault/commit/703cd603c7c7001105a7b66ad1a4b83d4f1c9c76))
+* **deps:** bump twig/twig in /app in the twig group ([def0e64](https://github.com/lostfocus/geovault/commit/def0e6496d0cc4ea82dd9b397254caa9d449037c))
+
 ## [1.0.3-develop.2](https://github.com/lostfocus/geovault/compare/v1.0.3-develop.1...v1.0.3-develop.2) (2026-06-04)
 
 
