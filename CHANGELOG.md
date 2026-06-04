@@ -1,3 +1,10 @@
+## [1.0.3-develop.1](https://github.com/lostfocus/geovault/compare/v1.0.2...v1.0.3-develop.1) (2026-06-04)
+
+
+### Bug Fixes
+
+* **deps:** bump symfony/flex ([703cd60](https://github.com/lostfocus/geovault/commit/703cd603c7c7001105a7b66ad1a4b83d4f1c9c76))
+
 ## [1.0.2](https://github.com/lostfocus/geovault/compare/v1.0.1...v1.0.2) (2026-05-29)
 
 
