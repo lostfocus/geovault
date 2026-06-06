@@ -35,10 +35,10 @@ jobs:
           php-version: "${{ matrix.php-version }}"
 
       - name: "Checkout code"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v6"
 
       - name: "Install dependencies"
-        uses: "ramsey/composer-install@v2"
+        uses: "ramsey/composer-install@v4"
         with:
           working-directory: "app"
 
@@ -63,7 +63,7 @@ jobs:
           coverage: "none"
 
       - name: "Checkout code"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v6"
 
       - name: "Check JSON files"
         run: |
@@ -74,7 +74,7 @@ jobs:
         run: "composer validate --no-interaction"
 
       - name: "Install dependencies"
-        uses: "ramsey/composer-install@v2"
+        uses: "ramsey/composer-install@v4"
         with:
           working-directory: "app"
           dependency-versions: "highest"

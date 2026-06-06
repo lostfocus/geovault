@@ -5,6 +5,14 @@
 
 version: 2
 updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    commit-message:
+      prefix: "ci"
+      prefix-development: "ci"
+      include: "scope"
+    schedule:
+      interval: "weekly"
   - package-ecosystem: "composer" # See documentation for possible values
     directory: "/app/" # Location of package manifests
     versioning-strategy: lockfile-only
