@@ -1,3 +1,11 @@
+# [1.1.0-develop.1](https://github.com/lostfocus/geovault/compare/v1.0.4-develop.1...v1.1.0-develop.1) (2026-06-06)
+
+
+### Features
+
+* Update Symfony to 8.0 ([5d6c6f7](https://github.com/lostfocus/geovault/commit/5d6c6f71077ed84066fec2843f59bbd39f7ad9b6))
+* Update Symfony to 8.1 ([9f04bb6](https://github.com/lostfocus/geovault/commit/9f04bb6a45d27094b55fec7f9bf529dfbb5630b5))
+
 ## [1.0.4-develop.1](https://github.com/lostfocus/geovault/compare/v1.0.3...v1.0.4-develop.1) (2026-06-06)
 
 
