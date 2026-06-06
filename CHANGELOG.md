@@ -1,3 +1,10 @@
+## [1.0.4-develop.1](https://github.com/lostfocus/geovault/compare/v1.0.3...v1.0.4-develop.1) (2026-06-06)
+
+
+### Bug Fixes
+
+* Dependency Updates ([5594353](https://github.com/lostfocus/geovault/commit/5594353a35f1eb1122eb1543923c2a8c88f007a7))
+
 ## [1.0.3](https://github.com/lostfocus/geovault/compare/v1.0.2...v1.0.3) (2026-06-04)
 
 
