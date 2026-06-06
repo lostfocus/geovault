@@ -1,3 +1,10 @@
+## [1.1.1-develop.1](https://github.com/lostfocus/geovault/compare/v1.1.0...v1.1.1-develop.1) (2026-06-06)
+
+
+### Bug Fixes
+
+* Don't use the json formatter ([4fad0e3](https://github.com/lostfocus/geovault/commit/4fad0e3cdd4f526143c2b544d4ba8fec62c3dd4e))
+
 # [1.1.0](https://github.com/lostfocus/geovault/compare/v1.0.3...v1.1.0) (2026-06-06)
 
 
