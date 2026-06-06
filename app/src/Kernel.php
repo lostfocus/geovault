@@ -15,4 +15,14 @@ class Kernel extends BaseKernel
         parent::boot();
         date_default_timezone_set('UTC');
     }
+
+    /**
+     * @return list<string> An array of allowed values for APP_ENV
+     *
+     * @phpstan-ignore-next-line
+     */
+    private function getAllowedEnvs(): array
+    {
+        return ['prod', 'dev', 'test'];
+    }
 }
