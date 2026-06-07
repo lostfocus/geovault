@@ -14,6 +14,21 @@
     <div class="map" data-readtoken="{{ database.readToken }}">
 
     </div>
+    {% if database.trips|length > 0 %}
+        <ul id="trips">
+            {% for trip in database.trips %}
+                <li>
+                <span
+                    data-start="{{ trip.startUTC|date('Y-m-d\\TH:i:sp') }}"
+                    data-end="{{ trip.endUTC|date('Y-m-d\\TH:i:sp') }}"
+                >
+                    {{ trip.startUTC|date('c') }}
+                </span>
+                    <a href="{{ path('tripgpx', {tripid: trip.id}) }}">GPX</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <nav>
         <a href="{{ path('app_home') }}">&laquo; Back</a>
     </nav>

@@ -1,3 +1,18 @@
+# [1.2.0-develop.3](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.2...v1.2.0-develop.3) (2026-06-07)
+
+
+### Features
+
+* Draw trips on the map ([ac36016](https://github.com/lostfocus/geovault/commit/ac360163a55750e3df2d6d873be49aa78d365ddd))
+* Export a trip as GPX file ([85c5ab8](https://github.com/lostfocus/geovault/commit/85c5ab8bc9b130c73287a0f89cc8ebfe052f0cf5))
+
+# [1.2.0-develop.2](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.1...v1.2.0-develop.2) (2026-06-07)
+
+
+### Features
+
+* Command line command to retroactively scan days for trips ([64c869a](https://github.com/lostfocus/geovault/commit/64c869acbf67894e3dc5f7257a9745a5d58a5f78))
+
 # [1.2.0-rc.1](https://github.com/lostfocus/geovault/compare/v1.1.0...v1.2.0-rc.1) (2026-06-07)
 
 
