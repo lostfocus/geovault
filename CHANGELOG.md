@@ -1,3 +1,10 @@
+# [1.2.0-develop.2](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.1...v1.2.0-develop.2) (2026-06-07)
+
+
+### Features
+
+* Command line command to retroactively scan days for trips ([64c869a](https://github.com/lostfocus/geovault/commit/64c869acbf67894e3dc5f7257a9745a5d58a5f78))
+
 # [1.2.0-rc.1](https://github.com/lostfocus/geovault/compare/v1.1.0...v1.2.0-rc.1) (2026-06-07)
 
 
