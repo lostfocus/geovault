@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpGetterAndSetterCanBeReplacedWithPropertyHooksInspection */
+
 namespace App\Entity;
 
 use App\Repository\DatabaseRepository;
@@ -48,11 +50,18 @@ class Database
     #[ORM\OneToMany(targetEntity: Location::class, mappedBy: 'locationDatabase', orphanRemoval: true)]
     private Collection $locations;
 
+    /**
+     * @var Collection<int, Trip>
+     */
+    #[ORM\OneToMany(targetEntity: Trip::class, mappedBy: 'locationDatabase')]
+    private Collection $trips;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
         $this->locations = new ArrayCollection();
+        $this->trips = new ArrayCollection();
     }
 
     /** @noinspection PhpUnused */
@@ -175,6 +184,31 @@ class Database
         if ($this->locations->removeElement($location) && $location->getLocationDatabase() === $this) {
             $location->setLocationDatabase(null);
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Trip>
+     */
+    public function getTrips(): Collection
+    {
+        return $this->trips;
+    }
+
+    public function addTrip(Trip $trip): static
+    {
+        if (!$this->trips->contains($trip)) {
+            $this->trips->add($trip);
+            $trip->setLocationDatabase($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTrip(Trip $trip): static
+    {
+        $this->trips->removeElement($trip);
 
         return $this;
     }
