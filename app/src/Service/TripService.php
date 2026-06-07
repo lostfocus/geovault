@@ -7,9 +7,15 @@ namespace App\Service;
 use App\Dto\Responses\FullResponse;
 use App\Entity\Database;
 use App\Entity\Trip;
+use App\Entity\User;
 use App\Repository\TripRepository;
 use App\Service\LocationService\DatabaseNotFoundException;
 use Doctrine\ORM\EntityManagerInterface;
+use phpGPX\Models\GpxFile;
+use phpGPX\Models\Metadata;
+use phpGPX\Models\Point;
+use phpGPX\Models\Segment;
+use phpGPX\Models\Track;
 use Quartz\Exception;
 
 final readonly class TripService
@@ -121,5 +127,68 @@ final readonly class TripService
         $this->entityManager->flush();
 
         return $trips;
+    }
+
+    public function getTripById(int $tripid, User $user): ?Trip
+    {
+        return $this->tripRepository->findOneBy(['id' => $tripid, 'user' => $user]);
+    }
+
+    /**
+     * @throws \DateMalformedStringException
+     * @throws \DateInvalidTimeZoneException
+     * @throws DatabaseNotFoundException
+     * @throws Exception
+     */
+    public function getGpx(Trip $trip): GpxFile
+    {
+        if (null === $trip->getLocationDatabase()->getReadToken()) {
+            throw new \UnexpectedValueException('We need a proper database');
+        }
+        $result = $this->locationService->query(
+            token: $trip->getLocationDatabase()->getReadToken(),
+            startString: $trip->getStartUTC()?->format('Y-m-d\TH:i:sp'),
+            endString: $trip->getEndUTC()?->format('Y-m-d\TH:i:sp'),
+        );
+        if (!$result instanceof FullResponse) {
+            throw new \UnexpectedValueException('Response is not valid');
+        }
+
+        $utc = new \DateTimeZone('UTC');
+
+        $gpx = new GpxFile();
+        $gpx->metadata = new Metadata();
+        $gpx->metadata->time = new \DateTime();
+        $gpx->metadata->description = 'Trip exported from Geovault';
+
+        $track = new Track();
+        $track->name = $trip->getMode();
+        $track->type = $trip->getMode();
+        $track->source = 'Geovault';
+
+        $segment = new Segment();
+
+        foreach ($result->locations as $location) {
+            if (
+                !property_exists($location, 'geometry')
+                || !property_exists($location, 'properties')
+                || !property_exists($location->geometry, 'coordinates')
+                || !property_exists($location->properties, 'altitude')
+                || !property_exists($location->properties, 'timestamp')
+            ) {
+                continue;
+            }
+            $point = new Point(Point::TRACKPOINT);
+            $point->latitude = $location->geometry->coordinates[1];
+            $point->longitude = $location->geometry->coordinates[0];
+            $point->elevation = $location->properties->altitude;
+            $point->time = new \DateTime($location->properties->timestamp, $utc);
+            $segment->points[] = $point;
+        }
+        $track->segments[] = $segment;
+        $track->recalculateStats();
+        $gpx->tracks[] = $track;
+
+        return $gpx;
     }
 }

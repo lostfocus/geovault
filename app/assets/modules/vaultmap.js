@@ -20,7 +20,7 @@ class Vaultmap {
             });
         }
 
-        const trips = document.querySelectorAll('#trips li');
+        const trips = document.querySelectorAll('#trips li span');
         if (trips) {
             for (let i = 0; i < trips.length; i++) {
                 const trip = trips[i];

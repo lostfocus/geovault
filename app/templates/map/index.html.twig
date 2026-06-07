@@ -17,11 +17,14 @@
     {% if database.trips|length > 0 %}
         <ul id="trips">
             {% for trip in database.trips %}
-                <li
+                <li>
+                <span
                     data-start="{{ trip.startUTC|date('Y-m-d\\TH:i:sp') }}"
                     data-end="{{ trip.endUTC|date('Y-m-d\\TH:i:sp') }}"
                 >
                     {{ trip.startUTC|date('c') }}
+                </span>
+                    <a href="{{ path('tripgpx', {tripid: trip.id}) }}">GPX</a>
                 </li>
             {% endfor %}
         </ul>
