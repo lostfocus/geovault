@@ -37,8 +37,12 @@ readonly class LocationService
      *
      * @noinspection PhpUnusedParameterInspection
      */
-    public function getLast(string $token, ?string $before = null, string $tz = 'UTC', bool $geocode = false): QuartzResponse
-    {
+    public function getLast(
+        string $token,
+        ?string $before = null,
+        string $tz = 'UTC',
+        bool $geocode = false,
+    ): QuartzResponse {
         $database = $this->databaseRepository->findOneBy(['readToken' => $token]);
         if (!$database instanceof Database || null === $database->getSlug()) {
             throw new DatabaseNotFoundException('invalid token');
@@ -53,14 +57,23 @@ readonly class LocationService
                 return $response;
             }
             try {
-                $data = json_decode(json_encode($latestLocation->getContent(), JSON_THROW_ON_ERROR), false, 512, JSON_THROW_ON_ERROR);
+                $data = json_decode(
+                    json_encode($latestLocation->getContent(), JSON_THROW_ON_ERROR),
+                    false,
+                    512,
+                    JSON_THROW_ON_ERROR
+                );
                 $quartzTimezone = null;
                 if (
                     null !== $latestLocation->getLatitude()
                     && null !== $latestLocation->getLongitude()
                     && null !== $latestLocation->getTimestampUTC()
                 ) {
-                    $timezoneResult = $this->quartz->timezoneForLocation($latestLocation->getLatitude(), $latestLocation->getLongitude(), $latestLocation->getTimestampUTC()->format('c'));
+                    $timezoneResult = $this->quartz->timezoneForLocation(
+                        $latestLocation->getLatitude(),
+                        $latestLocation->getLongitude(),
+                        $latestLocation->getTimestampUTC()->format('c')
+                    );
                     $quartzTimezone = new QuartzTimezone(
                         offset: $timezoneResult->date->format('P'),
                         seconds: (int) $timezoneResult->date->format('Z'),
@@ -139,8 +152,13 @@ readonly class LocationService
      * @throws DatabaseNotFoundException
      */
     public function query(
-        string $token, ?string $dateString = null, ?string $startString = null, ?string $endString = null, string $tz = 'UTC', string $format = 'full'): QueryResponse
-    {
+        string $token,
+        ?string $dateString = null,
+        ?string $startString = null,
+        ?string $endString = null,
+        string $tz = 'UTC',
+        string $format = 'full',
+    ): QueryResponse {
         $database = $this->databaseRepository->findOneBy(['readToken' => $token]);
         if (!$database instanceof Database || null === $database->getSlug()) {
             throw new DatabaseNotFoundException('invalid token');
