@@ -1,3 +1,11 @@
+# [1.2.0-develop.1](https://github.com/lostfocus/geovault/compare/v1.1.1-develop.1...v1.2.0-develop.1) (2026-06-07)
+
+
+### Features
+
+* Display events on the map ([9d7e86c](https://github.com/lostfocus/geovault/commit/9d7e86c60e3c35beca93c4146dae2290de2cfd1d))
+* Save trip data ([3425768](https://github.com/lostfocus/geovault/commit/3425768617d0d4209f0ff8a6fcda9ec3bfb90781))
+
 ## [1.1.1-develop.1](https://github.com/lostfocus/geovault/compare/v1.1.0...v1.1.1-develop.1) (2026-06-06)
 
 
