@@ -14,6 +14,13 @@
     <div class="map" data-readtoken="{{ database.readToken }}">
 
     </div>
+    {% if database.trips|length > 0 %}
+        <ul>
+            {% for trip in database.trips %}
+                <li>{{ dump(trip) }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <nav>
         <a href="{{ path('app_home') }}">&laquo; Back</a>
     </nav>
