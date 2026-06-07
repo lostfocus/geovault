@@ -3,6 +3,7 @@ class Vaultmap {
         const readToken = mapDiv.dataset.readtoken;
         const map = L.map(mapDiv).setView([46.5, 7.8], 13);
         this.visiblelayers = [];
+        this.visibleEvents = [];
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -25,12 +26,29 @@ class Vaultmap {
             .then(response => response.json())
             .then(data => {
                 this.drawLine(data.linestring, map);
+                this.drawEvents(data.events, map);
             });
     }
 
+    drawEvents(mapEvents, map) {
+        if (this.visibleEvents.length) {
+            for (let i in this.visibleEvents) {
+                map.removeLayer(this.visibleEvents[i]);
+            }
+        }
+        this.visibleEvents = [];
+        if (mapEvents.length) {
+            for (let i in mapEvents) {
+                let point = [mapEvents[i].geometry.coordinates[1], mapEvents[i].geometry.coordinates[0]];
+                let text = '<p>arrival: ' + mapEvents[i].properties.arrival_date + '<br>departure: ' + mapEvents[i].properties.departure_date + '</p>';
+                this.visibleEvents.push(L.marker(point).bindPopup(text).addTo(map));
+            }
+        }
+    }
+
     drawLine(line, map) {
-        if(this.visiblelayers.length) {
-            for(let i in this.visiblelayers) {
+        if (this.visiblelayers.length) {
+            for (let i in this.visiblelayers) {
                 map.removeLayer(this.visiblelayers[i]);
             }
         }

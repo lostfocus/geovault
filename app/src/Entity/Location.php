@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpGetterAndSetterCanBeReplacedWithPropertyHooksInspection */
+
 namespace App\Entity;
 
 use App\Repository\LocationRepository;
@@ -41,6 +43,9 @@ class Location
 
     #[ORM\Column]
     private \DateTimeImmutable $updatedAt;
+
+    #[ORM\ManyToOne]
+    private ?Trip $trip = null;
 
     public function __construct()
     {
@@ -148,6 +153,18 @@ class Location
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getTrip(): ?Trip
+    {
+        return $this->trip;
+    }
+
+    public function setTrip(?Trip $trip): static
+    {
+        $this->trip = $trip;
 
         return $this;
     }
