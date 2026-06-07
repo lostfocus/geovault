@@ -15,9 +15,14 @@
 
     </div>
     {% if database.trips|length > 0 %}
-        <ul>
+        <ul id="trips">
             {% for trip in database.trips %}
-                <li>{{ dump(trip) }}</li>
+                <li
+                    data-start="{{ trip.startUTC|date('Y-m-d\\TH:i:sp') }}"
+                    data-end="{{ trip.endUTC|date('Y-m-d\\TH:i:sp') }}"
+                >
+                    {{ trip.startUTC|date('c') }}
+                </li>
             {% endfor %}
         </ul>
     {% endif %}

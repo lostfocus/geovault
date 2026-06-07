@@ -19,7 +19,29 @@ class Vaultmap {
                 }
             });
         }
+
+        const trips = document.querySelectorAll('#trips li');
+        if (trips) {
+            for (let i = 0; i < trips.length; i++) {
+                const trip = trips[i];
+                const start = trip.dataset.start;
+                const end = trip.dataset.end;
+                trip.addEventListener('click', () => {
+                    this.updateStartEnd(start, end, map, readToken);
+                });
+            }
+        }
     }
+
+    updateStartEnd(start, end, map, readToken) {
+        fetch('/api/query?format=linestring&start=' + start + '&end=' + end + '&tz=UTC&token=' + readToken)
+            .then(response => response.json())
+            .then(data => {
+                this.drawLine(data.linestring, map);
+                this.drawEvents(data.events, map);
+            });
+    }
+
 
     updateDate(date, map, readToken) {
         fetch('/api/query?format=linestring&date=' + date + '&tz=UTC&token=' + readToken)
@@ -77,6 +99,7 @@ class Vaultmap {
             new Vaultmap(mapDiv);
         }
     }
+
 }
 
 export default Vaultmap;
