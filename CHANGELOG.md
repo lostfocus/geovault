@@ -1,3 +1,10 @@
+# [1.2.0-develop.5](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.4...v1.2.0-develop.5) (2026-07-23)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/doctrine-bundle in /app in the doctrine group ([5bceac2](https://github.com/lostfocus/geovault/commit/5bceac2dba09eff92aef9bd088bd9f9d26edb7fb))
+
 # [1.2.0-develop.4](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.3...v1.2.0-develop.4) (2026-07-05)
 
 
