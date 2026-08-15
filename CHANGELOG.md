@@ -1,3 +1,10 @@
+# [1.2.0-develop.8](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.7...v1.2.0-develop.8) (2026-08-15)
+
+
+### Bug Fixes
+
+* **deps:** bump the symfony group across 1 directory with 5 updates ([0e199a6](https://github.com/lostfocus/geovault/commit/0e199a6d291b3ae09d5905435e946f86711dd0ca))
+
 # [1.2.0-develop.7](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.6...v1.2.0-develop.7) (2026-07-30)
 
 
