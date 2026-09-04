@@ -1,3 +1,10 @@
+# [1.2.0-develop.11](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.10...v1.2.0-develop.11) (2026-09-04)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/doctrine-migrations-bundle ([f3faa18](https://github.com/lostfocus/geovault/commit/f3faa181b74292387c380890397a2c019a9b3217))
+
 # [1.2.0-develop.10](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.9...v1.2.0-develop.10) (2026-08-26)
 
 
