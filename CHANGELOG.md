@@ -1,3 +1,11 @@
+# [1.2.0-develop.14](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.13...v1.2.0-develop.14) (2026-09-14)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/doctrine-bundle in /app in the doctrine group ([6f9560c](https://github.com/lostfocus/geovault/commit/6f9560c4eb018f0cfcf76b3daa08ae039ebe27b1))
+* **deps:** bump symfony/monolog-bundle in /app in the symfony group ([90f424e](https://github.com/lostfocus/geovault/commit/90f424ef25408482c3cceca9ffb3c5b5af304687))
+
 # [1.2.0-develop.13](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.12...v1.2.0-develop.13) (2026-09-12)
 
 
