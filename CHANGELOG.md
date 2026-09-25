@@ -1,3 +1,11 @@
+# [1.2.0-develop.16](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.15...v1.2.0-develop.16) (2026-09-25)
+
+
+### Bug Fixes
+
+* **deps:** bump doctrine/orm ([ecd8f91](https://github.com/lostfocus/geovault/commit/ecd8f919e6369c2ee417e62d53547c26769fa632))
+* **deps:** bump twig/extra-bundle ([a84d2a3](https://github.com/lostfocus/geovault/commit/a84d2a31d877d7342a8e3efaa7143b8e09ad9fa3))
+
 # [1.2.0-develop.15](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.14...v1.2.0-develop.15) (2026-09-25)
 
 
