@@ -1,3 +1,10 @@
+# [1.2.0-develop.21](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.20...v1.2.0-develop.21) (2026-10-07)
+
+
+### Bug Fixes
+
+* **deps:** bump symfony/form in /app in the symfony group ([d2248a5](https://github.com/lostfocus/geovault/commit/d2248a589abee6d8e1a65016bd7956a93fb95c1c))
+
 # [1.2.0-develop.20](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.19...v1.2.0-develop.20) (2026-10-02)
 
 
