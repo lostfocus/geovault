@@ -18,8 +18,6 @@ class Kernel extends BaseKernel
 
     /**
      * @return list<string> An array of allowed values for APP_ENV
-     *
-     * @phpstan-ignore-next-line
      */
     private function getAllowedEnvs(): array
     {
