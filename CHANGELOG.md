@@ -1,3 +1,10 @@
+# [1.2.0-develop.29](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.28...v1.2.0-develop.29) (2026-11-13)
+
+
+### Bug Fixes
+
+* **deps:** bump phpstan/phpdoc-parser from 2.3.6 to 2.4.1 in /app ([02ca2a8](https://github.com/lostfocus/geovault/commit/02ca2a8c772451ad11527c251d609e0d074c6545))
+
 # [1.2.0-develop.28](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.27...v1.2.0-develop.28) (2026-11-07)
 
 
