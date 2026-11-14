@@ -1,3 +1,10 @@
+# [1.2.0-develop.30](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.29...v1.2.0-develop.30) (2026-11-14)
+
+
+### Bug Fixes
+
+* Dependency Updates ([ba383eb](https://github.com/lostfocus/geovault/commit/ba383eb7227129aa8c17276873ad189dbd3fffeb))
+
 # [1.2.0-develop.29](https://github.com/lostfocus/geovault/compare/v1.2.0-develop.28...v1.2.0-develop.29) (2026-11-13)
 
 
